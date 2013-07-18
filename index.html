@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Dogus first AngularJS project</title>
+    <title>Legg igjen en beskjed ... </title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="Content/css/bootstrap.min.css">
     <link rel="stylesheet" href="Content/css/bootstrap-responsive.min.css">
@@ -28,22 +28,31 @@
 </script>
 
 <div ng-controller="FirstCtrl">
-    <h1>AngularJS sandbox</h1>
+    <h1>Sorry</h1>
+
+    <h3> er ikke her akkurat nå, legg igjen en beskjed ...</h3>
     <progress percent="data.completed"></progress>
 
-    <input tooltip="Skriv inn en melding for å legge den til i listen" tooltip-trigger="focus" tooltip-placement="right"
+
+    <input placeholder="Ditt navn" tooltip="Ditt navn" tooltip-trigger="focus" tooltip-placement="right"
+           type="text" ng-model="data.name"/>
+    <span class="icon-question-sign" tooltip-placement="right" tooltip="Navnet sånn at jeg vet hvem det er"></span><br/>
+
+    <input placeholder="Din beskjed" tooltip="Din beskjed" tooltip-trigger="focus" tooltip-placement="right"
            type="text" ng-model="data.message"/>
-    <span class="icon-question-sign" tooltip-placement="right" tooltip="Legg til en beskjed"></span><br/>
+    <span class="icon-question-sign" tooltip-placement="right"
+          tooltip="Skriv inn en melding for å legge den til i listen"></span><br/>
+
 
     <div class="btn-group">
         <button class="btn" ng-click="addMessage()">Legg til melding</button>
-        <button class="btn" ng-click="removeMessage()">Fjern en melding</button>
+        <button class="btn" ng-click="removeMessage()">Fjern siste melding</button>
     </div>
 
 
-    <ul style="list-style-type: none;margin:10px 0 0 0" ng-repeat="msg in data.messages|orderBy:'txt'">
+    <ul style="list-style-type: none;margin:10px 0 0 0" ng-repeat="msg in data.messages">
         <li ng-class-even=""><span class="icon-plus"></span>
-            {{msg.txt | uppercase}}
+            {{ msg.name }} - {{msg.txt }}
         </li>
 
 
