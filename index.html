@@ -19,8 +19,13 @@
                    tooltip-trigger="focus" type="text" ng-model="twitter.twitterSearchTerm"/>
             <button class="btn" ng-click="getTweets()">Søk<i class="icon-search"></i></button>
         </form>
-        <table class="table table-bordered">
+        <table class="table table-bordered table-striped">
+            <tr>
+                <th>#</th>
+                <th>Tweet</th>
+            </tr>
             <tr ng-repeat="tweet in twitterData">
+                <td>{{ $index+1 }}</td>
                 <td>{{ tweet.text }}</td>
             </tr>
         </table>
@@ -50,14 +55,24 @@
     </div>
 
 
-    <ul style="list-style-type: none;margin:10px 0 0 0" ng-repeat="msg in data.messages">
-        <li ng-class-even=""><span class="icon-plus"></span>
-            {{ msg.name }} - {{msg.txt }}
-        </li>
+    <table class="table table-bordered table-striped">
+        <tr>
+            <th>#</th>
+            <th>Navn</th>
+            <th>Melding</th>
+        </tr>
+        <tr ng-repeat="msg in data.messages">
+            <td>{{ $index +1}}</td>
+            <td>{{ msg.name }}</td>
+            <td>{{ msg.txt }}</td>
+        </tr>
+    </table>
 
-
-    </ul>
 </div>
+<hr/>
+Ulike "apps":
+<a href="#">"Hjem"</a> |
+<a href="#twitter">Twitter</a> |
 <hr/>
 <ng-view></ng-view>
 
