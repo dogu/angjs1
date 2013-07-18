@@ -7,7 +7,11 @@ app.config(function ($routeProvider) {
     }).when("/messages", {
         templateUrl: "messages.html",
         controller: "FirstCtrl"
-    }).when("/twitter/:twitterScreenName", {
+    }).when("/converter", {
+        templateUrl: "converter.html",
+        controller: "ConvertCtrl"
+    })
+    .when("/twitter/:twitterScreenName", {
         templateUrl: "twitter.html",
         controller: "TwitterCtrl"
     }).when("/twitter", {

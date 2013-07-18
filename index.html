@@ -79,11 +79,39 @@
 <script type="text/ng-template" id="home.html">
     <h2>Klikk på en app i menyen!</h2>
 </script>
+<script type="text/ng-template" id="converter.html">
+
+    Vanlige meter: <input ng-model="data.m"/><br>
+    <table class="table table-bordered table-striped">
+        <tr>
+            <td> km: {{ data.m / 1000 }}</td>
+        </tr>
+        <tr>
+            <td> Engelske miles: {{ (data.m/1000) * 0.6 }}</td>
+        </tr>
+        <tr>
+            <td> Nautiske miles: {{ (data.m/1000) * (1/1.852) }}</td>
+        </tr>
+        <tr>
+            <td> Favn: {{ (data.m/1000) * 546.81 }}</td>
+        </tr>
+        <tr>
+            <td> League: {{ (data.m/1000) * 0.21 }}</td>
+        </tr>
+    </table>
+
+</script>
 <a href="#"><img id="head-image" src="http://dogu.no/media/300/dogulogo.png" alt="Made by Dogu AS"/></a><br>
+
+
+
+<hr>
 Ulike "apps":
 <a href="#">Hjem</a> |
 <a href="#messages">Meldinger</a> |
 <a href="#twitter">Twitter</a> |
+<a href="#converter">Konverterer</a> |
+
 <hr/>
 <ng-view></ng-view>
 

@@ -1,3 +1,7 @@
+function ConvertCtrl($scope){
+    $scope.data= {};
+    $scope.data.m = 0;
+}
 function FirstCtrl($scope, DataSource) {
 
     $scope.data = DataSource;
