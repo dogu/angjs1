@@ -6,7 +6,7 @@ function FirstCtrl($scope, $resource, DataSource) {
         {collection: '@collection', id: '@id'});
 
     $scope.data.message = Db.get({collection: 'messages'});
-    console.log($scope.data.message.get());
+
 
     function updatePercent() {
         DataSource.completed = DataSource.messages.length * 10;
