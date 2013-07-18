@@ -5,8 +5,8 @@ function FirstCtrl($scope, $resource, DataSource) {
     var Db = $resource('http://cpanel02.cloudapp.net\\:28000/Rest2012/angjs1/:collection/:id',
         {collection: '@collection', id: '@id'});
 
-    $scope.data.message = Db.get({collection: 'messages'});
-
+    var Amessages = Db.query({collection: 'messages'});
+    console.log(Amessages);
 
     function updatePercent() {
         DataSource.completed = DataSource.messages.length * 10;
