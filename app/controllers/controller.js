@@ -2,7 +2,14 @@ function ConvertCtrl($scope){
     $scope.data= {};
     $scope.data.m = 0;
 }
-function FirstCtrl($scope, DataSource) {
+
+function DialogCtrl($scope, dialog){
+    $scope.close = function(result){
+        dialog.close(result);
+    };
+}
+
+function FirstCtrl($scope,$dialog, DataSource) {
 
     $scope.data = DataSource;
 
@@ -23,6 +30,7 @@ function FirstCtrl($scope, DataSource) {
         });
     }
 
+
     $scope.addMessage = function () {
         // Store a new message to the database, id is automatically assigned
         var msg = DataSource.Db.save({name: $scope.data.name, txt: $scope.data.message}, function (data) {
@@ -36,15 +44,46 @@ function FirstCtrl($scope, DataSource) {
 
         });
 
-
     }
+
+    // Inling template for dialog
+    var t = '<div class="modal-header">'+
+        '<h3>Hvem er du?</h3>'+
+        '</div>'+
+        '<form><div class="modal-body">'+
+        '<p>Fullt navn: <input ng-model="result" /></p>'+
+        '</div>'+
+        '<div class="modal-footer">'+
+        '<button ng-click="close(result)" class="btn btn-primary" >OK</button>'+
+        '</div></form>';
+
+    var dialogOpts = {
+        backdrop: true,
+        keyboard: true,
+        backdropClick: true,
+        template:  t, // OR: templateUrl: 'path/to/view.html',
+        controller: 'DialogCtrl'
+    };
+
+    $scope.nameDialog = function(){
+        var d = $dialog.dialog(dialogOpts);
+        d.open().then(function(result){
+            if(result)
+            {
+                $scope.data.name = result;
+            }
+            this.close();
+        });
+    };
 
     $scope.removeMessage = function () {
         var id = $scope.data.messages[$scope.data.messages.length - 1].id;
         DataSource.Db.delete({id: id});
         DataSource.messages.splice(DataSource.messages.length - 1);
         updatePercent();
-    }
+    };
+
+    $scope.nameDialog();
 }
 
 function TwitterCtrl($scope, $http, $routeParams) {

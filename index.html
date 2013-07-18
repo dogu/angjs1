@@ -14,7 +14,7 @@
 <script type="text/ng-template" id="twitter.html">
     <h1>Twitter</h1>
 
-    <div ng-controller="TwitterCtrl">
+    <div>
         <form class="form-horizontal">
             <input tooltip-placement="bottom" tooltip="Skriv inn navnet på en twitter-konto og trykk søk"
                    tooltip-trigger="focus" type="text" ng-model="twitter.twitterSearchTerm"/>
@@ -35,18 +35,18 @@
 
 <script type="text/ng-template" id="messages.html">
 
-    <div ng-cloak ng-controller="FirstCtrl">
+    <div ng-cloak>
         <h1>Sorry</h1>
 
         <h3> er ikke her akkurat nå, legg igjen en beskjed ...</h3>
 
 
-        <input placeholder="Ditt navn" tooltip="Ditt navn" tooltip-trigger="focus" tooltip-placement="right"
+        <input class="span6" placeholder="Ditt navn" tooltip="Ditt navn" tooltip-trigger="focus" tooltip-placement="right"
                type="text" ng-model="data.name"/>
         <span class="icon-question-sign" tooltip-placement="right"
               tooltip="Navnet sånn at jeg vet hvem det er"></span><br/>
 
-        <input placeholder="Din beskjed" tooltip="Din beskjed" tooltip-trigger="focus" tooltip-placement="right"
+        <input class="span6" placeholder="Din beskjed" tooltip="Din beskjed" tooltip-trigger="focus" tooltip-placement="right"
                type="text" ng-model="data.message"/>
     <span class="icon-question-sign" tooltip-placement="right"
           tooltip="Skriv inn en melding for å legge den til i listen"></span><br/>
