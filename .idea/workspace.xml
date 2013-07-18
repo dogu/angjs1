@@ -12,7 +12,7 @@
     <file path="/twitter.html" changelist="adc39ec1-b104-4307-9a72-c7b6357ad5f9" time="1373995889361" ignored="false" />
     <file path="/style.css" changelist="adc39ec1-b104-4307-9a72-c7b6357ad5f9" time="1374163896920" ignored="false" />
     <file path="/controller.js" changelist="adc39ec1-b104-4307-9a72-c7b6357ad5f9" time="1374162291145" ignored="false" />
-    <file path="/Dummy.txt" changelist="adc39ec1-b104-4307-9a72-c7b6357ad5f9" time="1374164435457" ignored="false" />
+    <file path="/Dummy.txt" changelist="adc39ec1-b104-4307-9a72-c7b6357ad5f9" time="1374164515368" ignored="false" />
     <file path="/DataSource.js" changelist="adc39ec1-b104-4307-9a72-c7b6357ad5f9" time="1374156832667" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -36,7 +36,7 @@
       <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="26" selection-start="1199" selection-end="1199" vertical-scroll-proportion="0.71681416">
+            <state line="34" column="4" selection-start="1177" selection-end="1177" vertical-scroll-proportion="0.71681416">
               <folding />
             </state>
           </provider>
@@ -345,7 +345,11 @@
       <created>1374164440551</created>
       <updated>1374164440551</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Animate in whole app">
+      <created>1374164519449</created>
+      <updated>1374164519449</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -413,7 +417,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cloak on load&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Animate in whole app" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -439,6 +443,7 @@
     <MESSAGE value="La til filter" />
     <MESSAGE value="La til animasjon&#10;" />
     <MESSAGE value="Cloak on load&#10;" />
+    <MESSAGE value="Animate in whole app" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -547,7 +552,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="26" selection-start="1199" selection-end="1199" vertical-scroll-proportion="0.71681416">
+        <state line="34" column="4" selection-start="1177" selection-end="1177" vertical-scroll-proportion="0.71681416">
           <folding />
         </state>
       </provider>
