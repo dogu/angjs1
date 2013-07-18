@@ -24,7 +24,7 @@
                 <th>#</th>
                 <th>Tweet</th>
             </tr>
-            <tr ng-repeat="tweet in twitterData">
+            <tr ng-animate="'animate'" ng-repeat="tweet in twitterData">
                 <td>{{ $index+1 }}</td>
                 <td>{{ tweet.text }}</td>
             </tr>
@@ -80,7 +80,7 @@ Ulike "apps":
 
 
 <!-- Vendor scripts -->
-<script src="Scripts/angular.js"></script>
+<script src="Scripts/angular-1.1.5.js"></script>
 <script type="text/javascript" src="Scripts/angular-resource.min.js"></script>
 <script src="Scripts/ui-bootstrap-tpls-0.4.0.js" type="text/javascript"></script>
 
