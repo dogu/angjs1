@@ -9,6 +9,15 @@ table.table {
     margin-top: 20px;
 }
 
+#messages-table tr > td:first-child {
+     width:30px;
+}
+
+#messages-table tr > td:nth-child(2) {
+    width:150px;
+}
+
+
 /** ng-animate css */
 .animate-enter,
 .animate-leave {

@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="Content/css/bootstrap.min.css">
     <link rel="stylesheet" href="Content/css/bootstrap-responsive.min.css">
     <link rel="stylesheet" type="text/css" href="Content/css/style.css"/>
+    <script src="Scripts/angular-1.1.5.js"></script>
 
 </head>
 <body ng-app="app">
@@ -32,55 +33,61 @@
     </div>
 </script>
 
-<div ng-cloak ng-controller="FirstCtrl">
-    <h1>Sorry</h1>
+<script type="text/ng-template" id="messages.html">
 
-    <h3> er ikke her akkurat nå, legg igjen en beskjed ...</h3>
-    <progress percent="data.completed"></progress>
+    <div ng-cloak ng-controller="FirstCtrl">
+        <h1>Sorry</h1>
+
+        <h3> er ikke her akkurat nå, legg igjen en beskjed ...</h3>
 
 
-    <input placeholder="Ditt navn" tooltip="Ditt navn" tooltip-trigger="focus" tooltip-placement="right"
-           type="text" ng-model="data.name"/>
-    <span class="icon-question-sign" tooltip-placement="right" tooltip="Navnet sånn at jeg vet hvem det er"></span><br/>
+        <input placeholder="Ditt navn" tooltip="Ditt navn" tooltip-trigger="focus" tooltip-placement="right"
+               type="text" ng-model="data.name"/>
+        <span class="icon-question-sign" tooltip-placement="right"
+              tooltip="Navnet sånn at jeg vet hvem det er"></span><br/>
 
-    <input placeholder="Din beskjed" tooltip="Din beskjed" tooltip-trigger="focus" tooltip-placement="right"
-           type="text" ng-model="data.message"/>
+        <input placeholder="Din beskjed" tooltip="Din beskjed" tooltip-trigger="focus" tooltip-placement="right"
+               type="text" ng-model="data.message"/>
     <span class="icon-question-sign" tooltip-placement="right"
           tooltip="Skriv inn en melding for å legge den til i listen"></span><br/>
 
 
-    <div class="btn-group">
-        <button class="btn" ng-click="addMessage()">Legg til melding</button>
-        <button class="btn" ng-click="removeMessage()">Fjern melding #{{ data.messages.length }}</button>
+        <div class="btn-group">
+            <button class="btn" ng-click="addMessage()">Legg til melding</button>
+            <button class="btn" ng-click="removeMessage()">Fjern melding #{{ data.messages.length }}</button>
+        </div>
+        <i class="icon-search pull-right"></i><input tooltip="Søk etter en melding" class="pull-right"
+                                                     ng-model="data.searchTerm"/>
+
+
+        <table id="messages-table" class="table table-bordered table-striped">
+            <tr>
+                <th>#</th>
+                <th>Navn</th>
+                <th>Melding</th>
+            </tr>
+            <tr ng-repeat="msg in data.messages|filter:data.searchTerm|reverse">
+                <td>{{ data.messages.length - $index }}</td>
+                <td>{{ msg.name }}</td>
+                <td>{{ msg.txt }}</td>
+            </tr>
+        </table>
+        <progress percent="data.completed"></progress>
+
     </div>
-    <i class="icon-search pull-right"></i><input tooltip="Søk etter en melding" class="pull-right"
-                                                 ng-model="data.searchTerm"/>
-
-
-    <table class="table table-bordered table-striped">
-        <tr>
-            <th>#</th>
-            <th>Navn</th>
-            <th>Melding</th>
-        </tr>
-        <tr ng-repeat="msg in data.messages|filter:data.searchTerm|reverse">
-            <td>{{ data.messages.length - $index }}</td>
-            <td>{{ msg.name }}</td>
-            <td>{{ msg.txt }}</td>
-        </tr>
-    </table>
-
-</div>
-<hr/>
+</script>
+<script type="text/ng-template" id="home.html">
+    <h2>Klikk på en app i menyen!</h2>
+</script>
 Ulike "apps":
-<a href="#">"Hjem"</a> |
+<a href="#">Hjem</a> |
+<a href="#messages">Meldinger</a> |
 <a href="#twitter">Twitter</a> |
 <hr/>
 <ng-view></ng-view>
 
 
 <!-- Vendor scripts -->
-<script src="Scripts/angular-1.1.5.js"></script>
 <script type="text/javascript" src="Scripts/angular-resource.min.js"></script>
 <script src="Scripts/ui-bootstrap-tpls-0.4.0.js" type="text/javascript"></script>
 
