@@ -10,13 +10,18 @@ table.table {
 }
 
 #messages-table tr > td:first-child {
-     width:30px;
+    width: 30px;
 }
 
 #messages-table tr > td:nth-child(2) {
-    width:150px;
+    width: 150px;
 }
 
+#head-image {
+    width: 250px;
+    margin-left: -20px;
+    margin-top: -20px;
+}
 
 /** ng-animate css */
 .animate-enter,
