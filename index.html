@@ -51,7 +51,7 @@
 
     <div class="btn-group">
         <button class="btn" ng-click="addMessage()">Legg til melding</button>
-        <button class="btn" ng-click="removeMessage()">Fjern siste melding</button>
+        <button class="btn" ng-click="removeMessage()">Fjern melding #{{ data.messages.length }}</button>
     </div>
 
 
@@ -61,8 +61,8 @@
             <th>Navn</th>
             <th>Melding</th>
         </tr>
-        <tr ng-repeat="msg in data.messages">
-            <td>{{ $index +1}}</td>
+        <tr ng-repeat="msg in data.messages|reverse">
+            <td>{{ data.messages.length - $index }}</td>
             <td>{{ msg.name }}</td>
             <td>{{ msg.txt }}</td>
         </tr>
@@ -85,6 +85,7 @@ Ulike "apps":
 <!-- AngularJS files -->
 <script src="app/app.js"></script>
 <script type="text/javascript" src="app/controllers/controller.js"></script>
+<script type="text/javascript" src="app/filters/filters.js"></script>
 <script type="text/javascript" src="app/services/DataSource.js"></script>
 
 </body>

@@ -6,6 +6,7 @@ function FirstCtrl($scope, DataSource) {
         DataSource.completed = DataSource.messages.length * 10;
     }
 
+
     $scope.updateMessage = function () {
         // Get ID of message to update
         var idToUpdate = DataSource.messages[0].id;
