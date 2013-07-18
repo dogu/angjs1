@@ -12,52 +12,56 @@
 
 <script type="text/ng-template" id="twitter.html">
     <h1>Twitter</h1>
+
     <div ng-controller="TwitterCtrl">
         <form class="form-horizontal">
-            <input tooltip-placement="bottom" tooltip="Skriv inn navnet på en twitter-konto og trykk søk" tooltip-trigger="focus" type="text" ng-model="twitter.twitterSearchTerm"/>
+            <input tooltip-placement="bottom" tooltip="Skriv inn navnet på en twitter-konto og trykk søk"
+                   tooltip-trigger="focus" type="text" ng-model="twitter.twitterSearchTerm"/>
             <button class="btn" ng-click="getTweets()">Søk<i class="icon-search"></i></button>
-        </form> <table class="table table-bordered">
-        <tr ng-repeat="tweet in twitterData">
-            <td>{{ tweet.text }}</td>
-        </tr>
-    </table>
-
-
+        </form>
+        <table class="table table-bordered">
+            <tr ng-repeat="tweet in twitterData">
+                <td>{{ tweet.text }}</td>
+            </tr>
+        </table>
     </div>
 </script>
 
-    <div ng-controller="FirstCtrl">
-        <h1>AngularJS sandbox</h1>
-        <progress percent="data.completed"></progress>
+<div ng-controller="FirstCtrl">
+    <h1>AngularJS sandbox</h1>
+    <progress percent="data.completed"></progress>
 
-        <input tooltip="Skriv inn en melding for å legge den til i listen" tooltip-trigger="focus" tooltip-placement="right" type="text" ng-model="data.message"/>
-        <span class="icon-question-sign" tooltip-placement="right" tooltip="Legg til en beskjed"></span><br/>
-        <div class="btn-group">
-                <button class="btn" ng-click="addMessage()">Legg til melding</button>
-                <button class="btn" ng-click="removeMessage()">Fjern en melding</button>
-        </div>
+    <input tooltip="Skriv inn en melding for å legge den til i listen" tooltip-trigger="focus" tooltip-placement="right"
+           type="text" ng-model="data.message"/>
+    <span class="icon-question-sign" tooltip-placement="right" tooltip="Legg til en beskjed"></span><br/>
 
-
-        <ul style="list-style-type: none;margin:10px 0 0 0" ng-repeat="msg in data.messages|orderBy:'txt'">
-                   <li ng-class-even=""><span class="icon-plus"></span>
-                       {{msg.txt | uppercase}}
-                   </li>
-
-
-               </ul>
+    <div class="btn-group">
+        <button class="btn" ng-click="addMessage()">Legg til melding</button>
+        <button class="btn" ng-click="removeMessage()">Fjern en melding</button>
     </div>
-    <hr/>
-    <ng-view></ng-view>
 
 
-    <!-- Vendor scripts -->
-    <script src="Scripts/angular.js"></script>
-    <script src="Scripts/ui-bootstrap-tpls-0.4.0.js" type="text/javascript"></script>
+    <ul style="list-style-type: none;margin:10px 0 0 0" ng-repeat="msg in data.messages|orderBy:'txt'">
+        <li ng-class-even=""><span class="icon-plus"></span>
+            {{msg.txt | uppercase}}
+        </li>
 
-    <!-- AngularJS files -->
-    <script src="app/app.js"></script>
-    <script type="text/javascript" src="app/controllers/controller.js"></script>
-    <script type="text/javascript" src="app/services/DataSource.js"></script>
+
+    </ul>
+</div>
+<hr/>
+<ng-view></ng-view>
+
+
+<!-- Vendor scripts -->
+<script src="Scripts/angular.js"></script>
+<script type="text/javascript" src="Scripts/angular-resource.min.js"></script>
+<script src="Scripts/ui-bootstrap-tpls-0.4.0.js" type="text/javascript"></script>
+
+<!-- AngularJS files -->
+<script src="app/app.js"></script>
+<script type="text/javascript" src="app/controllers/controller.js"></script>
+<script type="text/javascript" src="app/services/DataSource.js"></script>
 
 </body>
 </html>

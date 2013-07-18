@@ -1,4 +1,4 @@
-var app = angular.module('app', ['ui.bootstrap']);
+var app = angular.module('app', ['ngResource', 'ui.bootstrap']);
 
 // #### ROUTING ####
 app.config(function ($routeProvider) {
@@ -6,8 +6,8 @@ app.config(function ($routeProvider) {
         templateUrl: "twitter.html",
         controller: "TwitterCtrl"
     }).when("/twitter", {
-        redirectTo: "/twitter/Dogu_AS/"
-    }).otherwise({
-        redirectTo: "/"
-    })
+            redirectTo: "/twitter/Dogu_AS/"
+        }).otherwise({
+            redirectTo: "/"
+        })
 });
